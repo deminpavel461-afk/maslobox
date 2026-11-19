@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МаслоБокс — Админка</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div id="login-view" class="login-view">
+    <form id="login-form" class="login-card">
+      <p class="brand">МАСЛОБОКС</p>
+      <h1>Админ-панель</h1>
+      <p class="login-hint">Введите ключ администратора из переменной <code>ADMIN_TOKEN</code></p>
+      <label>
+        <span>Ключ доступа</span>
+        <input id="token-input" type="password" autocomplete="current-password" required placeholder="ADMIN_TOKEN" />
+      </label>
+      <p id="login-error" class="error" hidden></p>
+      <button type="submit" class="btn btn-accent">Войти</button>
+    </form>
+  </div>
+
+  <div id="app-view" class="app-view" hidden>
+    <header class="topbar">
+      <div class="topbar-left">
+        <a class="brand" href="/">МАСЛОБОКС</a>
+        <span class="topbar-sep">Админка</span>
+      </div>
+      <button id="logout-btn" type="button" class="btn btn-ghost">Выйти</button>
+    </header>
+
+    <main class="panel">
+      <div class="panel-head">
+        <h1>Заявки</h1>
+        <p id="meta-line" class="meta">—</p>
+      </div>
+
+      <form id="filters" class="filters">
+        <label>
+          <span>Поиск</span>
+          <input name="q" type="search" placeholder="Имя или телефон" />
+        </label>
+        <label>
+          <span>Статус</span>
+          <select name="status">
+            <option value="">Все</option>
+            <option value="new">new</option>
+            <option value="confirmed">confirmed</option>
+            <option value="done">done</option>
+            <option value="canceled">canceled</option>
+          </select>
+        </label>
+        <label>
+          <span>Точка</span>
+          <select name="point_id" id="point-filter">
+            <option value="">Все</option>
+          </select>
+        </label>
+        <label>
+          <span>С даты</span>
+          <input name="date_from" type="date" />
+        </label>
+        <label>
+          <span>По дату</span>
+          <input name="date_to" type="date" />
+        </label>
+        <div class="filters-actions">
+          <button type="submit" class="btn btn-accent">Применить</button>
+          <button type="button" id="reset-filters" class="btn btn-ghost">Сбросить</button>
+        </div>
+      </form>
+
+      <div class="table-wrap">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Создана</th>
+              <th>Клиент</th>
+              <th>Авто</th>
+              <th>Точка</th>
+              <th>Время</th>
+              <th>Статус</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="bookings-body">
+            <tr><td colspan="8" class="empty">Загрузка…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pager">
+        <button type="button" id="prev-page" class="btn btn-ghost" disabled>Назад</button>
+        <span id="page-label">1 / 1</span>
+        <button type="button" id="next-page" class="btn btn-ghost" disabled>Вперёд</button>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="booking-dialog" class="dialog">
+    <form method="dialog" id="booking-form" class="dialog-card">
+      <header>
+        <h2 id="dialog-title">Заявка</h2>
+        <button type="submit" value="cancel" class="btn btn-ghost btn-icon" aria-label="Закрыть">×</button>
+      </header>
+      <div id="dialog-body" class="dialog-body"></div>
+      <div class="dialog-fields">
+        <label>
+          <span>Статус</span>
+          <select id="dialog-status" name="status"></select>
+        </label>
+        <label>
+          <span>Комментарий администратора</span>
+          <textarea id="dialog-comment" rows="3" placeholder="Заметка для точки"></textarea>
+        </label>
+        <p id="dialog-error" class="error" hidden></p>
+      </div>
+      <footer>
+        <button type="submit" value="cancel" class="btn btn-ghost">Отмена</button>
+        <button type="button" id="save-booking" class="btn btn-accent">Сохранить</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script src="admin.js"></script>
+</body>
+</html>

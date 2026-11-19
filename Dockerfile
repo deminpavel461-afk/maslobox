@@ -24,6 +24,7 @@ COPY backend/src /app/backend/src
 COPY backend/README.md /app/backend/README.md
 COPY index.html styles.css /app/static/
 COPY images /app/static/images
+COPY admin /app/static/admin
 
 EXPOSE 8080
 

@@ -47,7 +47,8 @@ git push -u origin main
 - `GET /health` → `{"status":"ok"}`
 - `GET /api/v1/points` → 3 точки
 - форма «Записаться» на главной создаёт заявку
-- админка: `Authorization: Bearer <ADMIN_TOKEN>` на `GET /api/v1/admin/bookings`
+- веб-админка: `https://<домен>/admin/` — вход по `ADMIN_TOKEN`
+- API админки: `Authorization: Bearer <ADMIN_TOKEN>` на `GET /api/v1/admin/bookings`
 
 ## 3. Через CLI (опционально)
 

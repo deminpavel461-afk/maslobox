@@ -41,10 +41,12 @@
   const saveBooking = document.getElementById("save-booking");
 
   function authHeaders() {
+    // X-Admin-Token — запасной путь: некоторые прокси Timeweb режут Authorization
     return {
       Accept: "application/json",
       "Content-Type": "application/json",
       Authorization: `Bearer ${state.token}`,
+      "X-Admin-Token": state.token,
     };
   }
 

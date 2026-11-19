@@ -1,0 +1,20 @@
+# Пример конфига для twc CLI (Timeweb Cloud App Platform).
+# Перед созданием приложения заполните provider_id / repository_id / preset_id:
+#   twc apps get-vcs-providers
+#   twc apps get-repositories "<provider_id>"
+#   twc apps list-presets backend
+#
+# twc apps create deploy/timeweb-app.yml
+
+app:
+  name: "maslobox"
+  comment: "Лендинг МаслоБокс + API заявок"
+  type: "backend"
+  framework: "dockerfile"
+  provider_id: "REPLACE_PROVIDER_ID"
+  repository_id: "REPLACE_REPOSITORY_ID"
+  branch_name: "main"
+  is_auto_deploy: true
+  preset_id: 1005
+  # Переменные окружения лучше задать в панели Timeweb (безопаснее, чем в git):
+  # ADMIN_TOKEN, NOTIFICATION_CHANNELS, CORS_ORIGINS, DATABASE_URL

@@ -1,0 +1,37 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "MasloBox booking API"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.165.0",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.16.3",
+    "python-multipart>=0.0.34",
+    "sqlalchemy>=2.1.9",
+    "tzdata>=2026.6",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.5.0",
+]
+
+[project.scripts]
+maslobox-api = "backend.main:run"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.uv]
+package = true

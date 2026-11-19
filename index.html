@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МаслоБокс — замена масла за 30 минут</title>
+  <meta name="description" content="Сеть точек замены масла. Синтетика и полусинтетика по регламенту автопроизводителя. 12 точек в городе." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#">МАСЛОБОКС</a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#how">Как это работает</a>
+      <a href="#locations">Точки</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+    <a class="btn btn-accent btn-sm" href="#book">Записаться</a>
+    <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-photo" src="images/hero.png" alt="Замена масла в сервисе МаслоБокс" width="1440" height="820" />
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow reveal">МАСЛОБОКС · СЕТЬ ТОЧЕК ЗАМЕНЫ МАСЛА</p>
+        <h1 class="reveal reveal-delay-1">Замена масла за 30 минут рядом с вами. Бесплатная диагностика ходовой в подарок</h1>
+        <p class="hero-sub reveal reveal-delay-2">Синтетика и полусинтетика · Работаем по регламенту автопроизводителя · 12 точек в городе</p>
+        <div class="hero-ctas reveal reveal-delay-3">
+          <a class="btn btn-accent" href="#book">Записаться онлайн</a>
+          <a class="btn btn-outline" href="#locations">Выбрать точку на карте</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benefits" id="benefits">
+      <h2>Почему выбирают нас</h2>
+      <div class="benefits-row">
+        <article class="benefit">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <h3>Без записи</h3>
+          <p>Принимаем в порядке живой очереди — приезжайте, когда удобно</p>
+        </article>
+        <article class="benefit">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <h3>По регламенту</h3>
+          <p>Соблюдаем объём и вязкость, рекомендованные автопроизводителем</p>
+        </article>
+        <article class="benefit">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 19a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l1-1h4l1 1h3a2 2 0 0 1 2 2"/><path d="M12 11v6"/><path d="M9 14h6"/><path d="M5 19h14"/></svg>
+          <h3>Утилизация</h3>
+          <p>Старое масло сдаём по нормам — без вреда для экологии</p>
+        </article>
+        <article class="benefit">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Гарантия</h3>
+          <p>Гарантия на работы и материалы — 6 месяцев или до следующего ТО</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section-head">
+        <h2>Услуги и цены</h2>
+        <p class="section-note">Цена включает работу, фильтр и расходные материалы. Стоимость масла — отдельно, по прайсу бренда.</p>
+      </div>
+      <div class="price-table" role="table" aria-label="Прайс услуг">
+        <div class="price-head" role="row">
+          <span role="columnheader">УСЛУГА</span>
+          <span role="columnheader">ЦЕНА</span>
+        </div>
+        <div class="price-row" role="row">
+          <span role="cell">Замена масла ДВС + фильтр</span>
+          <span class="price" role="cell">от 1 490 ₽</span>
+        </div>
+        <div class="price-row" role="row">
+          <span role="cell">Замена масла АКПП</span>
+          <span class="price" role="cell">от 2 990 ₽</span>
+        </div>
+        <div class="price-row" role="row">
+          <span role="cell">Замена жидкости ГУР</span>
+          <span class="price" role="cell">от 1 890 ₽</span>
+        </div>
+        <div class="price-row" role="row">
+          <span role="cell">Замена тормозной жидкости</span>
+          <span class="price" role="cell">от 1 690 ₽</span>
+        </div>
+        <div class="price-row price-row-last" role="row">
+          <span role="cell">Промывка масляной системы</span>
+          <span class="price" role="cell">от 990 ₽</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how" id="how">
+      <h2>Как это работает</h2>
+      <div class="steps">
+        <article class="step">
+          <span class="step-num">01</span>
+          <h3>Запись или приезд</h3>
+          <p>Запишитесь онлайн или приезжайте без записи — примем в живой очереди</p>
+        </article>
+        <article class="step">
+          <span class="step-num">02</span>
+          <h3>Диагностика жидкостей</h3>
+          <p>Проверяем уровни и состояние масел, фильтров и ходовой</p>
+        </article>
+        <article class="step">
+          <span class="step-num">03</span>
+          <h3>Замена по регламенту</h3>
+          <p>Меняем масло и фильтр строго по объёму и вязкости производителя</p>
+        </article>
+        <article class="step">
+          <span class="step-num">04</span>
+          <h3>Отчёт и рекомендации</h3>
+          <p>Выдаём чек, отчёт о работах и советы по следующему ТО</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section locations" id="locations">
+      <h2>Точки и контакты</h2>
+      <div class="loc-body">
+        <img
+          class="loc-map"
+          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1080&q=80"
+          alt="Карта точек МаслоБокс"
+          width="720"
+          height="420"
+        />
+        <div class="loc-list">
+          <article class="loc-item">
+            <h3>Север — ул. Ленина, 48</h3>
+            <p>Пн–Вс 9:00–21:00 · +7 (495) 120-45-01</p>
+            <a class="btn btn-outline-dark btn-sm" href="https://yandex.ru/maps/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Построить маршрут
+            </a>
+          </article>
+          <article class="loc-item">
+            <h3>Центр — пр. Мира, 112</h3>
+            <p>Пн–Вс 8:00–22:00 · +7 (495) 120-45-02</p>
+            <a class="btn btn-outline-dark btn-sm" href="https://yandex.ru/maps/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Построить маршрут
+            </a>
+          </article>
+          <article class="loc-item">
+            <h3>Юг — ул. Садовая, 7</h3>
+            <p>Пн–Сб 9:00–20:00 · +7 (495) 120-45-03</p>
+            <a class="btn btn-outline-dark btn-sm" href="https://yandex.ru/maps/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Построить маршрут
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust" id="reviews">
+      <h2>Почему нам доверяют</h2>
+      <div class="partners">
+        <span class="partners-label">ПАРТНЁРЫ</span>
+        <span>Castrol</span>
+        <span>Shell</span>
+        <span>Mobil</span>
+        <span>Total</span>
+        <span>Liqui Moly</span>
+      </div>
+      <div class="equip-photos">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80" alt="Рабочая зона сервиса" width="400" height="240" />
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80" alt="Автомобиль на подъёмнике" width="400" height="240" />
+        <img src="images/hero.png" alt="Замена масла на подъёмнике" width="400" height="240" />
+      </div>
+      <div class="guarantees">
+        <article>
+          <h3>Гарантия 6 месяцев</h3>
+          <p>На работы — или до следующего ТО, что наступит раньше</p>
+        </article>
+        <article>
+          <h3>Возврат фильтра</h3>
+          <p>Старый фильтр отдаём по запросу — можете проверить сами</p>
+        </article>
+        <article>
+          <h3>Оборудование</h3>
+          <p>Пневматические подъёмники и вакуумные станции слива</p>
+        </article>
+      </div>
+      <div class="reviews">
+        <article class="review">
+          <div class="review-head">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80" alt="" width="48" height="48" />
+            <div>
+              <strong>Андрей К.</strong>
+              <span>Toyota Camry</span>
+            </div>
+          </div>
+          <p>Заехал без записи — через 25 минут уже уехал. Масло Castrol, фильтр оригинал. Рекомендую точку на Мира.</p>
+        </article>
+        <article class="review">
+          <div class="review-head">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&q=80" alt="" width="48" height="48" />
+            <div>
+              <strong>Мария С.</strong>
+              <span>Kia Rio</span>
+            </div>
+          </div>
+          <p>Прозрачные цены, показали старый фильтр. Диагностику ходовой сделали бесплатно — нашли люфт.</p>
+        </article>
+        <article class="review">
+          <div class="review-head">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=96&q=80" alt="" width="48" height="48" />
+            <div>
+              <strong>Игорь В.</strong>
+              <span>VW Tiguan</span>
+            </div>
+          </div>
+          <p>Меняю масло здесь уже третий раз. Всегда по регламенту, чек и рекомендации на руках.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section lead" id="book">
+      <div class="lead-intro">
+        <h2>Запишитесь на замену</h2>
+        <p>Оставьте заявку — перезвоним за 5 минут и подберём ближайшую точку и время.</p>
+        <a class="lead-phone" href="tel:+74951204500">Или позвоните: +7 (495) 120-45-00</a>
+      </div>
+      <form class="lead-form" id="booking-form" action="#" method="post" novalidate>
+        <label>
+          <span>Имя</span>
+          <input type="text" name="name" placeholder="Алексей" required autocomplete="name" minlength="2" maxlength="50" />
+          <em class="field-error" data-error-for="name"></em>
+        </label>
+        <label>
+          <span>Телефон</span>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel" />
+          <em class="field-error" data-error-for="phone"></em>
+        </label>
+        <label>
+          <span>Марка / модель авто</span>
+          <input type="text" name="car_model" placeholder="например, Kia Rio 2019" required />
+          <em class="field-error" data-error-for="car_model"></em>
+        </label>
+        <label>
+          <span>Точка</span>
+          <select name="point_id" id="point-select">
+            <option value="">Подберём ближайшую</option>
+          </select>
+          <em class="field-error" data-error-for="point_id"></em>
+        </label>
+        <label>
+          <span>Желаемая дата и время</span>
+          <input type="text" name="desired_datetime" placeholder="завтра, после 14:00" />
+          <em class="field-error" data-error-for="desired_datetime"></em>
+        </label>
+        <label>
+          <span>Комментарий</span>
+          <textarea name="comment" rows="3" placeholder="Что важно учесть"></textarea>
+          <em class="field-error" data-error-for="comment"></em>
+        </label>
+        <label class="hp-field" aria-hidden="true">
+          <span>Сайт</span>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+        <label class="consent">
+          <input type="checkbox" name="consent" required />
+          <span>Согласен на обработку персональных данных</span>
+        </label>
+        <em class="field-error" data-error-for="consent"></em>
+        <em class="field-error" data-error-for="body"></em>
+        <p class="form-success" id="form-success" hidden>Заявка принята. Мы перезвоним в ближайшее время.</p>
+        <button class="btn btn-accent btn-block" type="submit">Отправить заявку</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#">МАСЛОБОКС</a>
+        <p>ИП Петров А.С. · ИНН 770123456789<br />г. Москва, ул. Промышленная, 15</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>ДОКУМЕНТЫ</h4>
+          <a href="#">Оферта</a>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+        <div>
+          <h4>АГРЕГАТОРЫ</h4>
+          <a href="#">Яндекс Карты</a>
+          <a href="#">2ГИС</a>
+          <a href="#">Авито Услуги</a>
+        </div>
+        <div>
+          <h4>КОНТАКТЫ</h4>
+          <a href="tel:+74951204500">+7 (495) 120-45-00</a>
+          <a href="mailto:hello@maslobox.ru">hello@maslobox.ru</a>
+          <a href="#">Telegram / WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 МаслоБокс. Все права защищены.</p>
+      <div class="socials">
+        <a href="#">VK</a>
+        <a href="#">YouTube</a>
+        <a href="#">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_BASE = window.MASLOBOX_API || '/api/v1';
+
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => {
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    links?.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    async function loadPoints() {
+      const select = document.getElementById('point-select');
+      if (!select) return;
+      try {
+        const res = await fetch(`${API_BASE}/points`);
+        if (!res.ok) return;
+        const points = await res.json();
+        for (const point of points) {
+          const opt = document.createElement('option');
+          opt.value = point.id;
+          opt.textContent = `${point.name} — ${point.address} (${point.schedule_label})`;
+          select.appendChild(opt);
+        }
+      } catch (_) {
+        /* API may be offline during static preview */
+      }
+    }
+
+    function clearErrors(form) {
+      form.querySelectorAll('.field-error').forEach((el) => {
+        el.textContent = '';
+      });
+    }
+
+    function showErrors(form, detail) {
+      clearErrors(form);
+      if (!Array.isArray(detail)) return;
+      for (const item of detail) {
+        const el = form.querySelector(`[data-error-for="${item.field}"]`);
+        if (el) el.textContent = item.message;
+      }
+    }
+
+    const form = document.getElementById('booking-form');
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearErrors(form);
+      const success = document.getElementById('form-success');
+      if (success) success.hidden = true;
+
+      const data = new FormData(form);
+      const payload = {
+        name: String(data.get('name') || '').trim(),
+        phone: String(data.get('phone') || '').trim(),
+        car_model: String(data.get('car_model') || '').trim(),
+        desired_datetime: String(data.get('desired_datetime') || '').trim() || null,
+        comment: String(data.get('comment') || '').trim() || null,
+        point_id: data.get('point_id') ? Number(data.get('point_id')) : null,
+        service_ids: [],
+        consent: data.get('consent') === 'on',
+        website: String(data.get('website') || ''),
+        source: 'landing',
+      };
+
+      const button = form.querySelector('button[type="submit"]');
+      if (button) button.disabled = true;
+      try {
+        const res = await fetch(`${API_BASE}/bookings`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const body = await res.json().catch(() => ({}));
+        if (res.status === 422) {
+          showErrors(form, body.detail);
+          return;
+        }
+        if (!res.ok) {
+          showErrors(form, [{ field: 'body', message: 'Не удалось отправить заявку. Попробуйте позже.' }]);
+          return;
+        }
+        form.reset();
+        if (success) success.hidden = false;
+      } catch (_) {
+        showErrors(form, [{ field: 'body', message: 'Сервер недоступен. Запустите API на порту 8000.' }]);
+      } finally {
+        if (button) button.disabled = false;
+      }
+    });
+
+    loadPoints();
+  </script>
+</body>
+</html>

@@ -26,6 +26,13 @@ html, body {
   font-family: var(--font-body);
 }
 
+/* Иначе display:grid/flex перебивает HTML-атрибут hidden */
+.login-view[hidden],
+.app-view[hidden],
+.error[hidden] {
+  display: none !important;
+}
+
 button, input, select, textarea {
   font: inherit;
   color: inherit;

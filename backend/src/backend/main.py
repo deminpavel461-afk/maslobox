@@ -13,7 +13,7 @@ from fastapi.staticfiles import StaticFiles
 from backend import database
 from backend.api.router import api_router
 from backend.config import get_settings
-from backend.seed import seed_if_empty
+from backend.seed import sync_catalog
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger("maslobox")
@@ -51,7 +51,7 @@ async def lifespan(_app: FastAPI):
     database.Base.metadata.create_all(bind=database.engine)
     db = database.SessionLocal()
     try:
-        seed_if_empty(db)
+        sync_catalog(db)
     finally:
         db.close()
     yield

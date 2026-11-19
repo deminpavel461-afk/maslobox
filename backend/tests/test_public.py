@@ -27,7 +27,7 @@ def test_list_reviews_only_published(client):
     response = client.get("/api/v1/reviews")
     assert response.status_code == 200
     data = response.json()
-    assert len(data) == 3
+    assert len(data) == 4
     assert all(item["client_name"] != "Скрытый" for item in data)
 
 
@@ -78,8 +78,8 @@ def test_create_booking_validation_errors(client):
 
 def test_create_booking_outside_hours(client):
     points = {p["slug"]: p for p in client.get("/api/v1/points").json()}
-    south = points["south"]
-    # Sunday — south is closed
+    west = points["center"]
+    # Sunday — west (МаслоТочка · Запад) is closed
     sunday = datetime(2026, 11, 22, 12, 0, tzinfo=MOSCOW)
     response = client.post(
         "/api/v1/bookings",
@@ -88,7 +88,7 @@ def test_create_booking_outside_hours(client):
             "phone": "+79120001122",
             "car_model": "VW Polo",
             "desired_datetime": sunday.strftime("%Y-%m-%d %H:%M"),
-            "point_id": south["id"],
+            "point_id": west["id"],
             "consent": True,
         },
     )

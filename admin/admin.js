@@ -1,4 +1,5 @@
 (() => {
+  window.__MASLOBOX_ADMIN_READY__ = true;
   const API = "/api/v1";
   const TOKEN_KEY = "maslobox_admin_token";
   const NEXT = {
@@ -112,7 +113,13 @@
   }
 
   async function loadPoints() {
-    const points = await fetch(`${API}/points`).then((r) => r.json());
+    const res = await fetch(`${API}/points`, { headers: { Accept: "application/json" } });
+    if (!res.ok) {
+      const err = new Error("Не удалось загрузить точки");
+      err.status = res.status;
+      throw err;
+    }
+    const points = await res.json();
     state.points = points;
     pointFilter.innerHTML = '<option value="">Все</option>';
     for (const point of points) {
@@ -234,16 +241,38 @@
     event.preventDefault();
     const token = tokenInput.value.trim();
     if (!token) return;
-    state.token = token;
-    localStorage.setItem(TOKEN_KEY, token);
+
+    const btn = document.getElementById("login-btn");
+    const prevLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Вход…";
     loginError.hidden = true;
+    state.token = token;
+
     try {
+      // Сразу проверяем ключ через админский API
+      await api("/admin/bookings?page=1&page_size=1");
+      localStorage.setItem(TOKEN_KEY, token);
       showApp();
       await loadPoints();
       state.page = 1;
       await loadBookings();
     } catch (err) {
-      showLogin(err.status === 401 ? "Неверный ключ администратора" : errorMessage(err));
+      state.token = "";
+      localStorage.removeItem(TOKEN_KEY);
+      loginView.hidden = false;
+      appView.hidden = true;
+      loginError.hidden = false;
+      if (err.status === 401) {
+        loginError.textContent = "Неверный ключ. Попробуйте change-me-admin-token или свой ADMIN_TOKEN.";
+      } else if (err.status === 404) {
+        loginError.textContent = "API не найден. Проверьте, что открыт адрес сайта Timeweb, а не локальный файл.";
+      } else {
+        loginError.textContent = errorMessage(err);
+      }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = prevLabel;
     }
   });
 

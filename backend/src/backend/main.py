@@ -7,6 +7,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from backend import database
@@ -76,6 +77,10 @@ def create_app() -> FastAPI:
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/admin")
+    def admin_redirect() -> RedirectResponse:
+        return RedirectResponse(url="/admin/", status_code=307)
 
     static_dir = _resolve_static_dir()
     if static_dir is not None:
